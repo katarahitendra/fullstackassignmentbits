@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nodejs
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+      - redis
+volumes:
+  mongodb_data:
