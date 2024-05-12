@@ -5,7 +5,7 @@ const router = express.Router();
 const WorkoutPlan = require('../Models/WorkoutPlan');
 
 // Route for retrieving all workout plans
-router.get('/', async (req, res) => {
+router.get('/list', async (req, res) => {
   try {
     const workoutPlans = await WorkoutPlan.find();
     res.status(200).json({ workoutPlans });
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 // Route for creating a new workout plan
-router.post('/', async (req, res) => {
+router.post('/createplan', async (req, res) => {
   try {
     const { name, description, exercises, createdBy } = req.body;
     const newWorkoutPlan = new WorkoutPlan({ name, description, exercises, createdBy });
@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
 });
 
 // Route for retrieving a specific workout plan by ID
-router.get('/:workoutPlanId', async (req, res) => {
+router.get('/getworkplan', async (req, res) => {
   try {
     const workoutPlan = await WorkoutPlan.findById(req.params.workoutPlanId);
     if (!workoutPlan) {

@@ -44,7 +44,12 @@ Before you begin, ensure you have the following installed:
     ```bash
     docker-compose down
     ```
-
+6. Import the Collection: 
+   - Download the "HealthTrackerAssignment.postman_collection.json" file.
+   - Open Postman.
+   - Click on "Import" > "Import File".
+   - Select the downloaded JSON file.
+   
 ## Customization
 
 - **Environment Variables**: Adjust the environment variables in the `.env` file to match your backend's configuration.

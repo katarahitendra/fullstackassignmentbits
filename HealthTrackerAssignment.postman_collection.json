@@ -1,0 +1,508 @@
+{
+	"info": {
+		"_postman_id": "24f785f2-927f-494e-9f7e-88bc3e99aeb1",
+		"name": "HealthTrackerAssignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12539786"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"test1\",\r\n  \"email\": \"test1@test.com\",\r\n  \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"test1\",\r\n  \"email\": \"test1@test.com\",\r\n  \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityLog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTU1MzU4MDEsImV4cCI6MTcxNTUzOTQwMSwiYXVkIjoiNjY0MGZlZTQyMDdjZWNjZWUyM2JlZDUwIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.KcvFR39k89iKIKCmk4ggrhzb6wg_uZc5FDZBR5UhSsw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": \"workout\",\r\n  \"duration\": 120,\r\n  \"distance\": 5,\r\n  \"intensity\": \"medium\",\r\n  \"caloriesBurned\": 100\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/activity/log",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"activity",
+						"log"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActivityHistory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTU1MzU4MDEsImV4cCI6MTcxNTUzOTQwMSwiYXVkIjoiNjY0MGZlZTQyMDdjZWNjZWUyM2JlZDUwIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.KcvFR39k89iKIKCmk4ggrhzb6wg_uZc5FDZBR5UhSsw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/activity/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"activity",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SetGoal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTU1MzU4MDEsImV4cCI6MTcxNTUzOTQwMSwiYXVkIjoiNjY0MGZlZTQyMDdjZWNjZWUyM2JlZDUwIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.KcvFR39k89iKIKCmk4ggrhzb6wg_uZc5FDZBR5UhSsw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": \"weight loss\",\r\n  \"targetValue\": 90\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/goal/set",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"goal",
+						"set"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetGoal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTU1MzU4MDEsImV4cCI6MTcxNTUzOTQwMSwiYXVkIjoiNjY0MGZlZTQyMDdjZWNjZWUyM2JlZDUwIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.KcvFR39k89iKIKCmk4ggrhzb6wg_uZc5FDZBR5UhSsw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/goal/getgoal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"goal",
+						"getgoal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateGoal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTU1MzU4MDEsImV4cCI6MTcxNTUzOTQwMSwiYXVkIjoiNjY0MGZlZTQyMDdjZWNjZWUyM2JlZDUwIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.KcvFR39k89iKIKCmk4ggrhzb6wg_uZc5FDZBR5UhSsw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": \"weight loss\",\r\n  \"targetValue\": 85\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/goal/updategoal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"goal",
+						"updategoal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveGoal",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTU1MzU4MDEsImV4cCI6MTcxNTUzOTQwMSwiYXVkIjoiNjY0MGZlZTQyMDdjZWNjZWUyM2JlZDUwIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.KcvFR39k89iKIKCmk4ggrhzb6wg_uZc5FDZBR5UhSsw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/goal/removegoal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"goal",
+						"removegoal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNutrition",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTU1MzY2ODcsImV4cCI6MTcxNTU0MDI4NywiYXVkIjoiNjY0MGZlZTQyMDdjZWNjZWUyM2JlZDUwIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.ZIZh5HYMq3Pq8-OZkQMJ0cdVj_i2rX3fTFOBt4UhmbY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/nutrition/getistnutrition",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"nutrition",
+						"getistnutrition"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NutritionLog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTU1MzU4MDEsImV4cCI6MTcxNTUzOTQwMSwiYXVkIjoiNjY0MGZlZTQyMDdjZWNjZWUyM2JlZDUwIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.KcvFR39k89iKIKCmk4ggrhzb6wg_uZc5FDZBR5UhSsw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mealType\": \"breakfast\",\r\n  \"foodItems\": [\"Eggs\", \"Toast\"],\r\n  \"calorieCount\": 300, // Optional: provide total calorie count directly\r\n  \"protein\": 20,\r\n  \"carbohydrates\": 30,\r\n  \"fats\": 10\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/nutrition/log",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"nutrition",
+						"log"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProgressLog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTU1MzY2ODcsImV4cCI6MTcxNTU0MDI4NywiYXVkIjoiNjY0MGZlZTQyMDdjZWNjZWUyM2JlZDUwIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.ZIZh5HYMq3Pq8-OZkQMJ0cdVj_i2rX3fTFOBt4UhmbY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"metrics\": {\r\n    \"weight\": 70,\r\n    \"bodyFatPercentage\": 15\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/progress/log",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"progress",
+						"log"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProgressTrack",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTU1MzY2ODcsImV4cCI6MTcxNTU0MDI4NywiYXVkIjoiNjY0MGZlZTQyMDdjZWNjZWUyM2JlZDUwIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.ZIZh5HYMq3Pq8-OZkQMJ0cdVj_i2rX3fTFOBt4UhmbY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/progress/track",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"progress",
+						"track"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WearableDevice",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTU1MzY2ODcsImV4cCI6MTcxNTU0MDI4NywiYXVkIjoiNjY0MGZlZTQyMDdjZWNjZWUyM2JlZDUwIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.ZIZh5HYMq3Pq8-OZkQMJ0cdVj_i2rX3fTFOBt4UhmbY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"data\": {\r\n    \"timestamp\": \"2024-05-20T10:00:00.000Z\",\r\n    \"activityType\": \"Running\",\r\n    \"duration\": 1800,\r\n    \"distance\": 5000,\r\n    \"heartRate\": 150,\r\n    \"caloriesBurned\": 300\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/device/stream",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"device",
+						"stream"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetWearableDeviceData",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTU1MzY2ODcsImV4cCI6MTcxNTU0MDI4NywiYXVkIjoiNjY0MGZlZTQyMDdjZWNjZWUyM2JlZDUwIiwiaXNzIjoicGlja3VycGFnZS5jb20ifQ.ZIZh5HYMq3Pq8-OZkQMJ0cdVj_i2rX3fTFOBt4UhmbY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/device/getstream",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"device",
+						"getstream"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
