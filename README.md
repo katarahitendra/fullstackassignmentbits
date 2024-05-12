@@ -1,4 +1,4 @@
-# My Backend App Docker Compose Setup
+# My Backend App Docker Compose Setup for the Fullstack Assignment 
 
 This Docker Compose setup allows you to easily run your backend code in a Docker containerized environment.
 
